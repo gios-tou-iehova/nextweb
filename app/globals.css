@@ -474,10 +474,153 @@ section {
   nav, footer, .btn-primary, .btn-secondary { display: none; }
 }
 
-/* ── SAFE AREA ─────────────────────────────────────────────── */
 @supports (padding: max(0px)) {
   body {
     padding-left: max(0px, env(safe-area-inset-left));
     padding-right: max(0px, env(safe-area-inset-right));
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COMPREHENSIVE MOBILE RESPONSIVE SYSTEM
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── RESPONSIVE TABLES ─────────────────────────────────────── */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 768px) {
+  table { min-width: 500px; }
+}
+
+/* ── ADMIN SIDEBAR OVERLAY (mobile) ────────────────────────── */
+.admin-sidebar-overlay { display: none; }
+
+@media (max-width: 900px) {
+  .admin-sidebar {
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1) !important;
+  }
+  .admin-sidebar.open {
+    transform: translateX(0) !important;
+    width: 260px !important;
+  }
+  .admin-main {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .admin-sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 99;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .admin-topbar { padding: 0 16px !important; }
+  .admin-content { padding: 16px !important; }
+}
+
+/* ── ADMIN STAT CARDS ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .admin-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .admin-stats-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── HERO SECTION ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-cta-group {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+  .hero-cta-group a, .hero-cta-group button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* ── SERVICE / BARBER GRIDS ────────────────────────────────── */
+@media (max-width: 900px) {
+  .services-grid, .barbers-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 560px) {
+  .services-grid, .barbers-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── GALLERY GRID ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+}
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── DASHBOARD ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .dashboard-grid { grid-template-columns: 1fr !important; }
+  .dashboard-stats { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .dashboard-stats { grid-template-columns: 1fr !important; }
+}
+
+/* ── FOOTER ────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 12px !important;
+    text-align: center !important;
+  }
+}
+
+/* ── CONTACT / ABOUT / BOOKING ─────────────────────────────── */
+@media (max-width: 768px) {
+  .contact-grid, .booking-grid, .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .contact-info-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .booking-time-slots {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+@media (max-width: 480px) {
+  .contact-info-grid { grid-template-columns: 1fr !important; }
+  .booking-time-slots { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ── WHY CHOOSE US ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* ── GENERIC OVERFLOW GUARD ────────────────────────────────── */
+@media (max-width: 768px) {
+  .container { padding: 0 16px !important; }
+  [role="dialog"] {
+    width: 95vw !important;
+    max-width: 95vw !important;
   }
 }

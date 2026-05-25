@@ -10,7 +10,20 @@ import {
 import toast, { Toaster } from 'react-hot-toast';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 900;
+      setIsMobile(mobile);
+      setSidebarOpen(!mobile); // open by default on desktop, closed on mobile
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const [userName, setUserName] = useState('Administrator');
   const router = useRouter();
   const pathname = usePathname();
@@ -51,7 +64,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { name: 'Users', href: '/admin/users', icon: Users },
   ];
 
-  const sidebarW = sidebarOpen ? '260px' : '72px';
+  const sidebarW = sidebarOpen ? '260px' : '72px'; // kept for label ref only, not used for layout
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', background: '#050505' }}>
@@ -63,19 +76,29 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         },
       }} />
 
+      {/* ── MOBILE OVERLAY BACKDROP ──────────────────────────── */}
+      {isMobile && sidebarOpen && (
+        <div
+          className="admin-sidebar-overlay"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
       {/* ── SIDEBAR ─────────────────────────────────────────── */}
-      <div style={{
-        width: sidebarW,
-        background: '#0a0a0f',
-        borderRight: '1px solid rgba(255,255,255,0.04)',
-        position: 'fixed',
-        left: 0, top: 0, bottom: 0,
-        zIndex: 100,
-        display: 'flex',
-        flexDirection: 'column',
-        transition: 'width 0.3s cubic-bezier(0.4,0,0.2,1)',
-        overflow: 'hidden',
-      }}>
+      <div
+        className={`admin-sidebar${sidebarOpen ? ' open' : ''}`}
+        style={{
+          width: sidebarOpen ? '260px' : (isMobile ? '0px' : '72px'),
+          background: '#0a0a0f',
+          borderRight: '1px solid rgba(255,255,255,0.04)',
+          position: 'fixed',
+          left: 0, top: 0, bottom: 0,
+          zIndex: 100,
+          display: 'flex',
+          flexDirection: 'column',
+          transition: 'width 0.3s cubic-bezier(0.4,0,0.2,1), transform 0.3s cubic-bezier(0.4,0,0.2,1)',
+          overflow: 'hidden',
+        }}>
         {/* Sidebar top decorative line */}
         <div style={{
           height: '2px',
@@ -255,27 +278,31 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       </div>
 
       {/* ── MAIN CONTENT ─────────────────────────────────────── */}
-      <div style={{
-        marginLeft: sidebarW,
-        flex: 1,
-        transition: 'margin-left 0.3s cubic-bezier(0.4,0,0.2,1)',
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-      }}>
-        {/* Top bar */}
-        <div style={{
-          height: '64px',
-          background: '#0a0a0f',
-          borderBottom: '1px solid rgba(255,255,255,0.04)',
+      <div
+        className="admin-main"
+        style={{
+          marginLeft: isMobile ? '0px' : (sidebarOpen ? '260px' : '72px'),
+          flex: 1,
+          transition: 'margin-left 0.3s cubic-bezier(0.4,0,0.2,1)',
           display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '0 32px',
-          position: 'sticky',
-          top: 0,
-          zIndex: 50,
+          flexDirection: 'column',
+          minHeight: '100vh',
         }}>
+        {/* Top bar */}
+        <div
+          className="admin-topbar"
+          style={{
+            height: '64px',
+            background: '#0a0a0f',
+            borderBottom: '1px solid rgba(255,255,255,0.04)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '0 32px',
+            position: 'sticky',
+            top: 0,
+            zIndex: 50,
+          }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -332,7 +359,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </div>
 
         {/* Page content */}
-        <div style={{ flex: 1, padding: 'clamp(24px, 4vw, 40px)' }}>
+        <div className="admin-content" style={{ flex: 1, padding: 'clamp(24px, 4vw, 40px)' }}>
           {children}
         </div>
       </div>
