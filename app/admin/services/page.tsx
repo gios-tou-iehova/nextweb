@@ -35,7 +35,7 @@ export default function AdminServices() {
   const fetchServices = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/admin/services`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/services`, {
         headers: token ? { 'Authorization': `Bearer ${token}` } : {}
       });
       const data = await response.json();
@@ -55,8 +55,8 @@ export default function AdminServices() {
     try {
       const token = localStorage.getItem('token');
       const url = editingService 
-        ? `${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/admin/services/${editingService.id}`
-        : `${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/admin/services`;
+        ? `${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/services/${editingService.id}`
+        : `${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/services`;
       const method = editingService ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -88,7 +88,7 @@ export default function AdminServices() {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/admin/services/${id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/services/${id}`, {
         method: 'DELETE',
         headers: token ? { 'Authorization': `Bearer ${token}` } : {}
       });

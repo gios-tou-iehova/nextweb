@@ -107,7 +107,7 @@ const BookingPage = () => {
 
   const fetchServices = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/services`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/services`);
       const data = await response.json();
       if (data.status === 'success') {
         setServices(data.data);
@@ -119,7 +119,7 @@ const BookingPage = () => {
 
   const fetchBarbers = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/barbers`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/barbers`);
       const data = await response.json();
       if (data.status === 'success') {
         setBarbers(data.data);
@@ -167,7 +167,7 @@ const BookingPage = () => {
     };
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/appointments`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/appointments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

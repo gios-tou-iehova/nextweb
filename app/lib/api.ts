@@ -1,4 +1,4 @@
-const API_BASE = (process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api');
+const API_BASE = (process.env.NEXT_PUBLIC_API_URL || '/api/proxy');
 
 export const api = {
   // Services

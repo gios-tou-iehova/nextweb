@@ -35,6 +35,14 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/proxy/:path*',
+        destination: 'http://elitebarber.atwebpages.com/php-backend/api/:path*',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
