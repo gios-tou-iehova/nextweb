@@ -21,7 +21,7 @@ export default function AdminAppointments() {
   const fetchAll = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/appointments`,{headers:token?{'Authorization':`Bearer ${token}`}:{} as Record<string,string>});
+      const res = await fetch(`${'/api/proxy'}/admin/appointments`,{headers:token?{'Authorization':`Bearer ${token}`}:{} as Record<string,string>});
       const data = await res.json();
       if(data.status==='success') setAppointments(data.data);
     } catch { toast.error('Failed to load'); } finally { setLoading(false); }
@@ -29,7 +29,7 @@ export default function AdminAppointments() {
   const updateStatus = async (id:number, status:string) => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/appointments/${id}`,{method:'PUT',headers:{'Content-Type':'application/json',...(token?{'Authorization':`Bearer ${token}`}:{})},body:JSON.stringify({status})});
+      const res = await fetch(`${'/api/proxy'}/admin/appointments/${id}`,{method:'PUT',headers:{'Content-Type':'application/json',...(token?{'Authorization':`Bearer ${token}`}:{})},body:JSON.stringify({status})});
       const data = await res.json();
       if(data.status==='success'){toast.success(`Marked ${status}`);fetchAll();}else toast.error(data.message||'Failed');
     } catch { toast.error('Error'); }
@@ -38,7 +38,7 @@ export default function AdminAppointments() {
     if(!msgTarget||!msgText.trim()) return;
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/notifications/send`,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${token}`},body:JSON.stringify({user_id:msgTarget.id,title:'Message from Admin',message:msgText})});
+      const res = await fetch(`${'/api/proxy'}/notifications/send`,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${token}`},body:JSON.stringify({user_id:msgTarget.id,title:'Message from Admin',message:msgText})});
       const data = await res.json();
       if(data.status==='success'){toast.success(`Sent to ${msgTarget.name}`);setShowMsg(false);setMsgText('');setMsgTarget(null);}else toast.error(data.message||'Failed');
     } catch { toast.error('Error'); }

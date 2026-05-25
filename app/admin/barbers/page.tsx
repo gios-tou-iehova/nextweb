@@ -40,7 +40,7 @@ export default function AdminBarbers() {
   const fetchBarbers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/barbers`, {
+      const response = await fetch(`${'/api/proxy'}/admin/barbers`, {
         headers: token ? { 'Authorization': `Bearer ${token}` } : {}
       });
       const data = await response.json();
@@ -60,8 +60,8 @@ export default function AdminBarbers() {
     try {
       const token = localStorage.getItem('token');
       const url = editingBarber 
-        ? `${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/barbers/${editingBarber.id}`
-        : `${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/barbers`;
+        ? `${'/api/proxy'}/admin/barbers/${editingBarber.id}`
+        : `${'/api/proxy'}/admin/barbers`;
       const method = editingBarber ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -93,7 +93,7 @@ export default function AdminBarbers() {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/barbers/${id}`, {
+      const response = await fetch(`${'/api/proxy'}/admin/barbers/${id}`, {
         method: 'DELETE',
         headers: token ? { 'Authorization': `Bearer ${token}` } : {}
       });

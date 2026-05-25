@@ -32,10 +32,10 @@ export default function AdminDashboard() {
       const headers = token ? { 'Authorization': `Bearer ${token}` } : {} as Record<string, string>;
 
       const [usersRes, barbersRes, servicesRes, appointmentsRes] = await Promise.all([
-        fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/users`, { headers }),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/barbers`),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/services`),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/appointments`, { headers }),
+        fetch(`${'/api/proxy'}/admin/users`, { headers }),
+        fetch(`${'/api/proxy'}/barbers`),
+        fetch(`${'/api/proxy'}/services`),
+        fetch(`${'/api/proxy'}/appointments`, { headers }),
       ]);
 
       const [usersData, barbersData, servicesData, appointmentsData] = await Promise.all([

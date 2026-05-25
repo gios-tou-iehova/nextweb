@@ -39,7 +39,7 @@ export default function Dashboard() {
 
   const fetchAppointments = async (token:string) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/appointments`, { headers: { 'Authorization':`Bearer ${token}` }});
+      const res = await fetch(`${'/api/proxy'}/appointments`, { headers: { 'Authorization':`Bearer ${token}` }});
       const data = await res.json();
       if (data.status === 'success') setAppointments(data.data || []);
     } catch {}
@@ -74,7 +74,7 @@ export default function Dashboard() {
   const cancelAppointment = async (id:number) => {
     const token = localStorage.getItem('token'); if (!token) return;
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/appointments/${id}`, { method:'DELETE', headers:{'Authorization':`Bearer ${token}`}});
+      const res = await fetch(`${'/api/proxy'}/appointments/${id}`, { method:'DELETE', headers:{'Authorization':`Bearer ${token}`}});
       const data = await res.json();
       if (data.status === 'success') { toast.success('Cancelled'); fetchAppointments(token); }
       else toast.error('Could not cancel');

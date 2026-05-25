@@ -51,7 +51,7 @@ export default function ProfilePage() {
       
       // Try to fetch profile from server
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/profile/get`, {
+        const response = await fetch(`${'/api/proxy'}/profile/get`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const data = await response.json();
@@ -114,7 +114,7 @@ export default function ProfilePage() {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/profile/upload-avatar`, {
+      const response = await fetch(`${'/api/proxy'}/profile/upload-avatar`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -142,7 +142,7 @@ export default function ProfilePage() {
   const handleSaveProfile = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/profile/update`, {
+      const response = await fetch(`${'/api/proxy'}/profile/update`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

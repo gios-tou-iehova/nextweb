@@ -24,7 +24,7 @@ export default function RegisterPage() {
     setErrorMessage('');
     setSuccessMessage('');
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/auth/register`, {
+      const response = await fetch(`${'/api/proxy'}/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone, password, role: 'customer' }),

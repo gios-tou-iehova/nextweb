@@ -16,7 +16,7 @@ export default function AdminUsers() {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/users`, { headers: token ? { 'Authorization': `Bearer ${token}` } : {} as Record<string,string> });
+      const res = await fetch(`${'/api/proxy'}/admin/users`, { headers: token ? { 'Authorization': `Bearer ${token}` } : {} as Record<string,string> });
       const data = await res.json();
       if (data.status === 'success') setUsers(data.data);
     } catch { toast.error('Failed to load'); }
@@ -27,7 +27,7 @@ export default function AdminUsers() {
     if (!confirm('Delete this user permanently?')) return;
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/admin/users/${id}`, { method:'DELETE', headers: token ? { 'Authorization': `Bearer ${token}` } : {} as Record<string,string> });
+      const res = await fetch(`${'/api/proxy'}/admin/users/${id}`, { method:'DELETE', headers: token ? { 'Authorization': `Bearer ${token}` } : {} as Record<string,string> });
       const data = await res.json();
       if (data.status === 'success') { toast.success('User removed'); fetchUsers(); }
       else toast.error(data.message||'Delete failed');

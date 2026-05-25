@@ -37,7 +37,7 @@ export default function ServicesPage() {
 
   const fetchServices = async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || '/api/proxy'}/services`);
+      const res = await fetch(`${'/api/proxy'}/services`);
       const data = await res.json();
       if (data.status === 'success') setServices(data.data);
     } catch {}
