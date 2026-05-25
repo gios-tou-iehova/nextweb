@@ -21,7 +21,7 @@ const Barbers = () => {
   const [loading, setLoading] = useState(true);
   const [hoveredId, setHoveredId] = useState<number|null>(null);
 
-  useEffect(() => { fetch('http://localhost/backend/api/barbers').then(r=>r.json()).then(d=>{ if(d.status==='success') setBarbers(d.data); }).catch(()=>{}).finally(()=>setLoading(false)); }, []);
+  useEffect(() => { fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/barbers`).then(r=>r.json()).then(d=>{ if(d.status==='success') setBarbers(d.data); }).catch(()=>{}).finally(()=>setLoading(false)); }, []);
 
   if (loading) return (
     <section style={{padding:'100px 0',background:'#050505',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',gap:'20px'}}>

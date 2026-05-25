@@ -18,7 +18,7 @@ export default function LoginPage() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost/backend/api/auth/login', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

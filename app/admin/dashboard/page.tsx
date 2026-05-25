@@ -32,10 +32,10 @@ export default function AdminDashboard() {
       const headers = token ? { 'Authorization': `Bearer ${token}` } : {} as Record<string, string>;
 
       const [usersRes, barbersRes, servicesRes, appointmentsRes] = await Promise.all([
-        fetch('http://localhost/backend/api/admin/users', { headers }),
-        fetch('http://localhost/backend/api/barbers'),
-        fetch('http://localhost/backend/api/services'),
-        fetch('http://localhost/backend/api/appointments', { headers }),
+        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/admin/users`, { headers }),
+        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/barbers`),
+        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/services`),
+        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/appointments`, { headers }),
       ]);
 
       const [usersData, barbersData, servicesData, appointmentsData] = await Promise.all([

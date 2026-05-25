@@ -40,7 +40,7 @@ export default function AdminBarbers() {
   const fetchBarbers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost/backend/api/admin/barbers', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/admin/barbers`, {
         headers: token ? { 'Authorization': `Bearer ${token}` } : {}
       });
       const data = await response.json();
@@ -60,8 +60,8 @@ export default function AdminBarbers() {
     try {
       const token = localStorage.getItem('token');
       const url = editingBarber 
-        ? `http://localhost/backend/api/admin/barbers/${editingBarber.id}`
-        : 'http://localhost/backend/api/admin/barbers';
+        ? `${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/admin/barbers/${editingBarber.id}`
+        : `${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/admin/barbers`;
       const method = editingBarber ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -93,7 +93,7 @@ export default function AdminBarbers() {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost/backend/api/admin/barbers/${id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/admin/barbers/${id}`, {
         method: 'DELETE',
         headers: token ? { 'Authorization': `Bearer ${token}` } : {}
       });

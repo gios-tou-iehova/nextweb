@@ -30,7 +30,7 @@ export default function NotificationBell() {
       const token = localStorage.getItem('token');
       if (!token) return;
       
-      const response = await fetch('http://localhost/backend/api/notifications/get', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/notifications/get`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -50,7 +50,7 @@ export default function NotificationBell() {
   const markAsRead = async (id: number) => {
     try {
       const token = localStorage.getItem('token');
-      await fetch(`http://localhost/backend/api/notifications/mark-read/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://elitebarber.atwebpages.com/php-backend/api'}/notifications/mark-read/${id}`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });
