@@ -20,7 +20,7 @@ const FAQ = () => {
     },
     {
       question: "What exclusive services do you offer?",
-      answer: "We offer a comprehensive list of premium services including bespoke haircuts, precision beard sculpts, hot towel signature shaves, hair coloring, and elite combination packages. Every service features premium organic products."
+      answer: "We offer a comprehensive list of premium services including bespoke haircuts, precision beard sculpts, hot towel signature shaves, hair coloring, and david pro combination packages. Every service features premium organic products."
     },
     {
       question: "How long is a standard styling session?",

@@ -133,7 +133,7 @@ export default function LoginPage() {
                 letterSpacing: '1px',
                 color: '#f5f0e8',
               }}>
-                ELITE <span style={{ color: '#c41e3a' }}>BARBER</span>
+                DAVID PRO <span style={{color:'#c41e3a'}}>BARBER HUB</span>
               </span>
             </div>
           </motion.div>
@@ -271,7 +271,7 @@ export default function LoginPage() {
                 <span style={{ fontSize: '16px' }}>✂</span>
               </div>
               <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700 }}>
-                ELITE <span style={{ color: '#c41e3a' }}>BARBER</span>
+                DAVID PRO <span style={{color:'#c41e3a'}}>BARBER HUB</span>
               </span>
             </div>
           </div>
@@ -433,7 +433,7 @@ export default function LoginPage() {
               color: 'rgba(158,155,148,0.6)',
               fontSize: '13px',
             }}>
-              New to Elite Barber?{' '}
+              New to David Pro Barber Hub?{' '}
               <Link href="/auth/register" style={{
                 color: '#c41e3a',
                 textDecoration: 'none',

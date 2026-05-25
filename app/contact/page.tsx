@@ -26,7 +26,7 @@ export default function ContactPage() {
   const contactInfo = [
     { icon: MapPin, label: 'Address', value: '123 Barber Street, Lagos, Nigeria', color: '#c41e3a' },
     { icon: Phone, label: 'Phone', value: '+234 801 234 5678', color: '#c9a84c' },
-    { icon: Mail, label: 'Email', value: 'info@elitebarber.com', color: '#7c6af7' },
+    { icon: Mail, label: 'Email', value: 'info@davidprobarberhub.com', color: '#7c6af7' },
     { icon: Clock, label: 'Hours', value: 'Mon–Sat 9am–8pm · Sun 12pm–6pm', color: '#06b6d4' },
   ];
 

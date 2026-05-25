@@ -14,8 +14,8 @@ interface SEOProps {
 }
 
 const defaultSEO = {
-  title: 'Elite Barber Shop - Premium Men\'s Grooming & Haircuts',
-  description: 'Experience premium men\'s grooming at Elite Barber Shop. Expert barbers, modern cuts, classic shaves, and beard styling. Book your appointment today.',
+  title: 'David Pro Barber Hub - Premium Men\'s Grooming & Haircuts',
+  description: 'Experience premium men\'s grooming at David Pro Barber Hub. Expert barbers, modern cuts, classic shaves, and beard styling. Book your appointment today.',
   keywords: [
     'barber shop',
     'men\'s haircuts',
@@ -27,7 +27,7 @@ const defaultSEO = {
     'professional barber'
   ],
   image: '/images/og-image.jpg',
-  url: 'https://elitebarbershop.com',
+  url: 'https://davidprobarberhub.com',
   type: 'website' as const,
 };
 
@@ -43,7 +43,7 @@ export function generateSEO({
   author,
   noIndex = false,
 }: SEOProps = {}): Metadata {
-  const seoTitle = title ? `${title} | Elite Barber Shop` : defaultSEO.title;
+  const seoTitle = title ? `${title} | David Pro Barber Hub` : defaultSEO.title;
   const seoDescription = description || defaultSEO.description;
   const seoImage = image || defaultSEO.image;
   const seoUrl = url || defaultSEO.url;
@@ -57,7 +57,7 @@ export function generateSEO({
       title: seoTitle,
       description: seoDescription,
       url: seoUrl,
-      siteName: 'Elite Barber Shop',
+      siteName: 'David Pro Barber Hub',
       images: [
         {
           url: seoImage,
@@ -77,7 +77,7 @@ export function generateSEO({
       title: seoTitle,
       description: seoDescription,
       images: [seoImage],
-      creator: '@elitebarbershop',
+      creator: '@davidprobarberhub',
     },
     alternates: {
       canonical: seoUrl,
@@ -98,7 +98,7 @@ export function generateSEO({
 export const pageSEO = {
   home: generateSEO({
     title: 'Premium Men\'s Grooming & Haircuts',
-    description: 'Experience the finest in men\'s grooming at Elite Barber Shop. Expert barbers, premium services, and unmatched attention to detail. Book your transformation today.',
+    description: 'Experience the finest in men\'s grooming at David Pro Barber Hub. Expert barbers, premium services, and unmatched attention to detail. Book your transformation today.',
     keywords: ['premium barbershop', 'men\'s grooming', 'haircut booking', 'professional barbers'],
   }),
 
@@ -106,42 +106,42 @@ export const pageSEO = {
     title: 'Barber Services - Haircuts, Shaves & Grooming',
     description: 'Discover our complete range of barbering services including modern haircuts, classic shaves, beard trimming, and premium grooming treatments.',
     keywords: ['barber services', 'haircut prices', 'shave services', 'grooming packages'],
-    url: 'https://elitebarbershop.com/services',
+    url: 'https://davidprobarberhub.com/services',
   }),
 
   gallery: generateSEO({
     title: 'Gallery - Our Best Work & Transformations',
     description: 'View our portfolio of exceptional haircuts, beard styling, and grooming transformations. See why we\'re the premier barbershop choice.',
     keywords: ['barber portfolio', 'haircut gallery', 'before after', 'barber work'],
-    url: 'https://elitebarbershop.com/gallery',
+    url: 'https://davidprobarberhub.com/gallery',
   }),
 
   barbers: generateSEO({
     title: 'Meet Our Expert Barbers & Master Stylists',
     description: 'Meet our team of skilled barbers and master stylists. Each brings years of experience and passion for the craft of men\'s grooming.',
     keywords: ['expert barbers', 'master stylists', 'barber team', 'professional staff'],
-    url: 'https://elitebarbershop.com/barbers',
+    url: 'https://davidprobarberhub.com/barbers',
   }),
 
   booking: generateSEO({
     title: 'Book Appointment - Online Booking System',
     description: 'Book your barbershop appointment online. Choose your preferred barber, service, and time slot. Easy scheduling for premium grooming services.',
     keywords: ['book appointment', 'online booking', 'schedule haircut', 'barber appointment'],
-    url: 'https://elitebarbershop.com/booking',
+    url: 'https://davidprobarberhub.com/booking',
   }),
 
   contact: generateSEO({
     title: 'Contact Us - Location, Hours & Information',
-    description: 'Get in touch with Elite Barber Shop. Find our location, hours, contact information, and directions. We\'re here to serve you.',
+    description: 'Get in touch with David Pro Barber Hub. Find our location, hours, contact information, and directions. We\'re here to serve you.',
     keywords: ['contact barbershop', 'location hours', 'barber shop address', 'phone number'],
-    url: 'https://elitebarbershop.com/contact',
+    url: 'https://davidprobarberhub.com/contact',
   }),
 
   about: generateSEO({
     title: 'About Us - Our Story & Mission',
-    description: 'Learn about Elite Barber Shop\'s story, mission, and commitment to excellence in men\'s grooming. Discover what makes us different.',
+    description: 'Learn about David Pro Barber Hub\'s story, mission, and commitment to excellence in men\'s grooming. Discover what makes us different.',
     keywords: ['about barbershop', 'our story', 'barber mission', 'company history'],
-    url: 'https://elitebarbershop.com/about',
+    url: 'https://davidprobarberhub.com/about',
   }),
 };
 
@@ -150,8 +150,8 @@ export function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "HairSalon",
-    "name": "Elite Barber Shop",
-    "image": "https://elitebarbershop.com/images/logo.jpg",
+    "name": "David Pro Barber Hub",
+    "image": "https://davidprobarberhub.com/images/logo.jpg",
     "description": "Premium men's grooming and barbershop services",
     "address": {
       "@type": "PostalAddress",
@@ -167,7 +167,7 @@ export function generateLocalBusinessSchema() {
       "longitude": -74.0060
     },
     "telephone": "+1-555-123-4567",
-    "url": "https://elitebarbershop.com",
+    "url": "https://davidprobarberhub.com",
     "openingHours": [
       "Mo-Fr 09:00-19:00",
       "Sa 09:00-18:00", 
@@ -196,7 +196,7 @@ export function generateServiceSchema(service: {
     "description": service.description,
     "provider": {
       "@type": "HairSalon",
-      "name": "Elite Barber Shop"
+      "name": "David Pro Barber Hub"
     },
     "offers": {
       "@type": "Offer",

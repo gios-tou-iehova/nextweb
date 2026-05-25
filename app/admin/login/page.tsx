@@ -160,7 +160,7 @@ export default function AdminLogin() {
           color: 'rgba(255,255,255,0.08)',
           whiteSpace: 'nowrap',
         }}>
-          Elite Barber Administration System
+          David Pro Barber Hub Administration System
         </div>
       </div>
 
@@ -251,7 +251,7 @@ export default function AdminLogin() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                placeholder="admin@elitebarber.com"
+                placeholder="admin@david probarber.com"
               />
             </div>
             <div>

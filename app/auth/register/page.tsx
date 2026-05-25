@@ -32,7 +32,7 @@ export default function RegisterPage() {
       const data = await response.json();
       if (data.status === 'success') {
         setSuccessMessage('Account created. Redirecting to sign in...');
-        toast.success('Welcome to Elite Barber!');
+        toast.success('Welcome to David Pro Barber Hub!');
         setTimeout(() => router.push('/auth/login'), 2000);
       } else {
         setErrorMessage(data.message || 'Registration failed');
@@ -127,7 +127,7 @@ export default function RegisterPage() {
                   fontSize: '20px', fontWeight: 700,
                   color: '#f5f0e8', letterSpacing: '1px',
                 }}>
-                  ELITE <span style={{ color: '#c41e3a' }}>BARBER</span>
+                  DAVID PRO <span style={{color:'#c41e3a'}}>BARBER HUB</span>
                 </span>
               </div>
             </Link>
@@ -149,7 +149,7 @@ export default function RegisterPage() {
               marginBottom: '24px',
             }}>
               Join the<br />
-              <span style={{ fontStyle: 'italic', color: '#c9a84c' }}>Elite</span><br />
+              <span style={{ fontStyle: 'italic', color: '#c9a84c' }}>David Pro</span><br />
               Circle.
             </h2>
             <p style={{
@@ -222,7 +222,7 @@ export default function RegisterPage() {
           <div className="show-mobile" style={{ marginBottom: '36px', textAlign: 'center' }}>
             <Link href="/" style={{ textDecoration: 'none' }}>
               <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '18px', fontWeight: 700 }}>
-                ELITE <span style={{ color: '#c41e3a' }}>BARBER</span>
+                DAVID PRO <span style={{color:'#c41e3a'}}>BARBER HUB</span>
               </span>
             </Link>
           </div>

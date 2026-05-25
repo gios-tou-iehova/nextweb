@@ -147,7 +147,7 @@ export default function GalleryPage() {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <div style={{ width: '16px', height: '1px', background: '#c41e3a' }} />
-                <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '9px', letterSpacing: '3px', textTransform: 'uppercase', color: '#c41e3a' }}>Elite Barber Studio</span>
+                <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '9px', letterSpacing: '3px', textTransform: 'uppercase', color: '#c41e3a' }}>David Pro Barber Hub</span>
               </div>
             </div>
           </div>

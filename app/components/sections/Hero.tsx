@@ -408,7 +408,7 @@ const Hero = () => {
               }}>
                 <div>
                   <Sparkles size={16} color="white" style={{ marginBottom: '2px', margin: '0 auto' }} />
-                  <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '1px', color: 'white', fontFamily: 'Montserrat, sans-serif' }}>ELITE</div>
+                  <div style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '1px', color: 'white', fontFamily: 'Montserrat, sans-serif' }}>DAVID PRO</div>
                 </div>
               </div>
 

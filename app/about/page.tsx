@@ -10,13 +10,13 @@ import Footer from '../components/layout/Footer';
 export default function AboutPage() {
   const values = [
     { icon: Scissors, title: 'Precision', description: 'Every cut is crafted with meticulous attention to detail, turning each session into a work of art.' },
-    { icon: Users, title: 'Community', description: 'Building lasting relationships with clients — not just customers, but lifelong members of the Elite family.' },
+    { icon: Users, title: 'Community', description: 'Building lasting relationships with clients — not just customers, but lifelong members of the David Pro family.' },
     { icon: Award, title: 'Excellence', description: 'Committed to the highest standards in every service, every visit, every single time.' },
     { icon: Heart, title: 'Passion', description: 'A deep love for the craft drives everything we do, from the first snip to the final look.' },
   ];
 
   const milestones = [
-    { year: '1999', title: 'Founded', description: 'Elite Barber opens its first flagship location in Lagos.' },
+    { year: '1999', title: 'Founded', description: 'David Pro Barber Hub opens its first flagship location in Lagos.' },
     { year: '2008', title: 'Expansion', description: 'Opened our second luxury location, serving thousands more clients.' },
     { year: '2015', title: 'Awarded', description: 'Named Best Barbershop in Nigeria by Grooming Authority Magazine.' },
     { year: '2024', title: 'Digital', description: 'Launched our fully integrated online booking platform.' },
@@ -78,7 +78,7 @@ export default function AboutPage() {
                   More Than<br />Just a<br /><span style={{ fontStyle: 'italic', color: '#c41e3a' }}>Haircut.</span>
                 </h1>
                 <p style={{ color: 'rgba(158,155,148,0.65)', fontSize: '15px', lineHeight: 1.8, maxWidth: '500px', marginBottom: '36px' }}>
-                  Since 1999, Elite Barber has been redefining the grooming experience in Nigeria. A space where craftsmanship meets community, and where every client leaves feeling transformed.
+                  Since 1999, David Pro Barber Hub has been redefining the grooming experience in Nigeria. A space where craftsmanship meets community, and where every client leaves feeling transformed.
                 </p>
                 <Link href="/booking" style={{ textDecoration: 'none' }}>
                   <button className="btn-primary" style={{ padding: '15px 36px', fontSize: '11px', letterSpacing: '3px' }}>
@@ -117,7 +117,7 @@ export default function AboutPage() {
                     fontFamily: 'Montserrat, sans-serif',
                     fontSize: '10px', fontWeight: 700,
                     letterSpacing: '3px', textTransform: 'uppercase', color: '#c41e3a',
-                  }}>— Founder, Elite Barber</span>
+                  }}>— Founder, David Pro Barber Hub</span>
                 </div>
               </motion.div>
             </div>

@@ -15,7 +15,7 @@ const WhyChooseUs = () => {
     {
       icon: Users,
       title: "Expert Craftsmanship",
-      description: "15+ master barbers trained in elite classic and modern precision styles.",
+      description: "15+ master barbers trained in david pro classic and modern precision styles.",
       color: "#c9a84c"
     },
     {
@@ -27,7 +27,7 @@ const WhyChooseUs = () => {
     {
       icon: Clock,
       title: "Flexible Scheduling",
-      description: "Effortless online appointments with custom timeframes to suit elite rosters.",
+      description: "Effortless online appointments with custom timeframes to suit david pro rosters.",
       color: "#c9a84c"
     },
     {
@@ -99,7 +99,7 @@ const WhyChooseUs = () => {
             color: '#f5f0e8',
             marginBottom: '16px',
           }}>
-            Why Elite Gentlemen <br />
+            Why David Pro Gentlemen <br />
             <span style={{ fontStyle: 'italic', color: '#c41e3a' }}>Choose Us.</span>
           </h2>
 

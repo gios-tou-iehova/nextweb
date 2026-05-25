@@ -8,10 +8,10 @@ import ServiceWorkerRegistration from './components/ui/ServiceWorkerRegistration
 
 export const metadata: Metadata = {
   title: {
-    default: 'Elite Barber Shop - Premium Men\'s Grooming & Haircuts',
-    template: '%s | Elite Barber Shop'
+    default: 'David Pro Barber Hub - Premium Men\'s Grooming & Haircuts',
+    template: '%s | David Pro Barber Hub'
   },
-  description: 'Experience premium men\'s grooming at Elite Barber Shop. Expert barbers, modern cuts, classic shaves, and beard styling. Book your appointment today for the ultimate barbershop experience.',
+  description: 'Experience premium men\'s grooming at David Pro Barber Hub. Expert barbers, modern cuts, classic shaves, and beard styling. Book your appointment today for the ultimate barbershop experience.',
   keywords: [
     'barber shop',
     'men\'s haircuts',
@@ -26,29 +26,29 @@ export const metadata: Metadata = {
     'modern haircuts',
     'beard styling'
   ],
-  authors: [{ name: 'Elite Barber Shop', url: 'https://elitebarbershop.com' }],
-  creator: 'Elite Barber Shop',
-  publisher: 'Elite Barber Shop',
+  authors: [{ name: 'David Pro Barber Hub', url: 'https://davidprobarberhub.com' }],
+  creator: 'David Pro Barber Hub',
+  publisher: 'David Pro Barber Hub',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://elitebarbershop.com'),
+  metadataBase: new URL('https://davidprobarberhub.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Elite Barber Shop - Premium Men\'s Grooming & Haircuts',
-    description: 'Experience premium men\'s grooming at Elite Barber Shop. Expert barbers, modern cuts, classic shaves, and beard styling.',
-    url: 'https://elitebarbershop.com',
-    siteName: 'Elite Barber Shop',
+    title: 'David Pro Barber Hub - Premium Men\'s Grooming & Haircuts',
+    description: 'Experience premium men\'s grooming at David Pro Barber Hub. Expert barbers, modern cuts, classic shaves, and beard styling.',
+    url: 'https://davidprobarberhub.com',
+    siteName: 'David Pro Barber Hub',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Elite Barber Shop - Premium Men\'s Grooming',
+        alt: 'David Pro Barber Hub - Premium Men\'s Grooming',
       },
     ],
     locale: 'en_US',
@@ -56,10 +56,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Elite Barber Shop - Premium Men\'s Grooming & Haircuts',
-    description: 'Experience premium men\'s grooming at Elite Barber Shop. Expert barbers, modern cuts, classic shaves, and beard styling.',
+    title: 'David Pro Barber Hub - Premium Men\'s Grooming & Haircuts',
+    description: 'Experience premium men\'s grooming at David Pro Barber Hub. Expert barbers, modern cuts, classic shaves, and beard styling.',
     images: ['/images/twitter-image.jpg'],
-    creator: '@elitebarbershop',
+    creator: '@davidprobarberhub',
   },
   robots: {
     index: true,
@@ -115,7 +115,7 @@ export default function RootLayout({
         
         {/* Additional SEO meta tags */}
         <meta name="geo.region" content="US" />
-        <meta name="geo.placename" content="Elite Barber Shop" />
+        <meta name="geo.placename" content="David Pro Barber Hub" />
         <meta name="geo.position" content="40.7128;-74.0060" />
         <meta name="ICBM" content="40.7128, -74.0060" />
         
@@ -134,8 +134,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "HairSalon",
-              "name": "Elite Barber Shop",
-              "image": "https://elitebarbershop.com/images/logo.jpg",
+              "name": "David Pro Barber Hub",
+              "image": "https://davidprobarberhub.com/images/logo.jpg",
               "description": "Premium men's grooming and barbershop services",
               "address": {
                 "@type": "PostalAddress",
@@ -151,7 +151,7 @@ export default function RootLayout({
                 "longitude": -74.0060
               },
               "telephone": "+1-555-123-4567",
-              "url": "https://elitebarbershop.com",
+              "url": "https://davidprobarberhub.com",
               "openingHours": [
                 "Mo-Fr 09:00-19:00",
                 "Sa 09:00-18:00",
@@ -159,7 +159,7 @@ export default function RootLayout({
               ],
               "priceRange": "$$",
               "servedCuisine": [],
-              "hasMenu": "https://elitebarbershop.com/services",
+              "hasMenu": "https://davidprobarberhub.com/services",
               "acceptsReservations": true,
               "aggregateRating": {
                 "@type": "AggregateRating",

@@ -113,7 +113,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 color: '#f5f0e8', letterSpacing: '0.5px',
                 whiteSpace: 'nowrap',
               }}>
-                ELITE <span style={{ color: '#c41e3a' }}>BARBER</span>
+                DAVID PRO <span style={{color:'#c41e3a'}}>BARBER HUB</span>
               </div>
               <div style={{
                 fontFamily: 'Montserrat, sans-serif',

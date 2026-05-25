@@ -50,7 +50,7 @@ const Footer = () => {
         pointerEvents: 'none',
         lineHeight: 1,
         userSelect: 'none',
-      }}>ELITE</div>
+      }}>DAVID PRO</div>
 
       <div className="container" style={{ paddingTop: '80px', paddingBottom: '40px', position: 'relative', zIndex: 2 }}>
         <div style={{
@@ -76,7 +76,7 @@ const Footer = () => {
                 fontSize: '18px', fontWeight: 800,
                 letterSpacing: '1px', color: '#f5f0e8',
               }}>
-                ELITE <span style={{ color: '#c41e3a' }}>BARBER</span>
+                DAVID PRO <span style={{color:'#c41e3a'}}>BARBER HUB</span>
               </span>
             </Link>
 
@@ -218,7 +218,7 @@ const Footer = () => {
               {[
                 { icon: MapPin, text: '123 Barber Street, Lagos, Nigeria' },
                 { icon: Phone, text: '+234 801 234 5678' },
-                { icon: Mail, text: 'info@elitebarber.com' },
+                { icon: Mail, text: 'info@davidprobarberhub.com' },
                 { icon: Clock, text: 'Mon–Sat: 9am – 8pm · Sun: 12pm – 6pm' },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -249,7 +249,7 @@ const Footer = () => {
             fontSize: '10px', letterSpacing: '2px',
             color: 'rgba(158,155,148,0.3)',
           }}>
-            © {year} ELITE BARBER. ALL RIGHTS RESERVED.
+            © {year} DAVID PRO BARBER HUB. ALL RIGHTS RESERVED.
           </p>
           <div style={{ display: 'flex', gap: '28px', flexWrap: 'wrap' }}>
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((link) => (

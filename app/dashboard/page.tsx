@@ -113,7 +113,7 @@ export default function Dashboard() {
             </div>
             <div>
               <div style={{fontFamily:"'Playfair Display',serif",fontSize:'14px',fontWeight:800,letterSpacing:'1px',color:'#f5f0e8'}}>
-                ELITE <span style={{color:'#c41e3a'}}>BARBER</span>
+                DAVID PRO <span style={{color:'#c41e3a'}}>BARBER HUB</span>
               </div>
               <div style={{fontFamily:'Montserrat,sans-serif',fontSize:'8px',letterSpacing:'3px',textTransform:'uppercase',color:'rgba(158,155,148,0.4)'}}>Member Dashboard</div>
             </div>

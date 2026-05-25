@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://elitebarbershop.com';
+  const baseUrl = 'https://davidprobarberhub.com';
   const currentDate = new Date().toISOString();
 
   // Static pages

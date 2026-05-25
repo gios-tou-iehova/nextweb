@@ -156,7 +156,7 @@ const Navbar = () => {
                   color: '#f5f0e8',
                   lineHeight: 1.1,
                 }}>
-                  ELITE <span style={{ color: '#c41e3a' }}>BARBER</span>
+                  DAVID PRO <span style={{color:'#c41e3a'}}>BARBER HUB</span>
                 </div>
                 <div style={{
                   fontFamily: 'Montserrat, sans-serif',
