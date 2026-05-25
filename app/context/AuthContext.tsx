@@ -65,7 +65,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         localStorage.setItem('user', JSON.stringify(data.data.user));
         document.cookie = `auth_token=${data.data.token}; path=/; max-age=86400; SameSite=Lax`;
         toast.success('Login successful!');
-        router.push('/dashboard');
+        router.push('/');
       } else {
         toast.error(data.message || 'Login failed');
       }
